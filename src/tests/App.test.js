@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 
-import App from './components/App';
+import App from '../components/App';
+import Header from '../components/Header';
 
 //Test what it renders
 //Test state & props the component receives
@@ -14,8 +15,9 @@ describe('<App />', () => {
     ReactDOM.render(<App />, div);
   });
 
-  it('should have a header');
-
-  it('should have a footer');
+  it('has a child <Header /> component', () => {
+    const component = shallow(<Header />);
+    expect(component.exists()).to.be(true);
+  });
 
 });
