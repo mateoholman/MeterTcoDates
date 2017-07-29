@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
+import Landing from './Landing';
 import '../styles/App.css';
 
 class App extends Component {
   render() {
     return (
-      <Grid>
         <div className="App">
           <Header />
+          <Switch>
+            <Route path='/' component={Landing} />
+          </Switch>
         </div>
-      </Grid>
     );
   }
 }
