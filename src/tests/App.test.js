@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { shallow, mount, render } from 'enzyme';
 
 import App from '../components/App';
 import Header from '../components/Header';
@@ -11,13 +11,11 @@ import Header from '../components/Header';
 
 describe('<App />', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
+      mount(<App />);
   });
 
-  it('has a child <Header /> component', () => {
-    const component = shallow(<Header />);
-    expect(component.exists()).to.be(true);
+  it('render the header', () => {
+
   });
 
 });
