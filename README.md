@@ -1,5 +1,5 @@
 # To-do
-1. Choose UI
+1. Build-out components
 
 # Process
 1. Scaffold frontend with create-react-app
