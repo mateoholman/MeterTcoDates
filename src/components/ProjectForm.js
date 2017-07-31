@@ -15,4 +15,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default ProjectForm;
