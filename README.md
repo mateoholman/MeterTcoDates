@@ -1,5 +1,5 @@
 # To-do
-1. Build-out components
+1. Create form component instead of separate Project & Schedule components.
 
 # Process
 1. Scaffold frontend with create-react-app

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
-import Landing from './Landing';
+import ProjectType from './ProjectType';
 import '../styles/App.css';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <Switch>
-            <Route path='/' component={Landing} />
+            <Route path='/' component={ProjectType} />
           </Switch>
         </div>
     );
