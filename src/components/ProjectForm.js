@@ -28,7 +28,7 @@ class ProjectForm extends Component {
               Schedule Type:
             </Col>
             <Col sm={4}>
-              <Radio checked name="waterMeter" inline>Water Meter</Radio>
+              <Radio name="waterMeter" inline>Water Meter</Radio>
               <Radio name="occupancy" inline>Occupancy</Radio>
             </Col>
           </FormGroup>
