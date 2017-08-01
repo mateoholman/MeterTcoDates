@@ -7,13 +7,13 @@ class ProjectForm extends Component {
       <div className="project-form">
         <h2>Choose The Type of Project</h2>
 
-        <Form horizontal>
+        <Form>
 
           <FormGroup controlId="projectType">
-            <Col smOffset={1} componentClass={ControlLabel} sm={2}>
+            <Col smOffset={2} componentClass={ControlLabel} sm={2}>
               Project Type:
             </Col>
-            <Col sm={4}>
+            <Col sm={8}>
               <FormControl componentClass="select" placeholder="DTRes">
                 <option value="DTRes">Downtown Residential / Hotel</option>
                 <option value="DTOffice">Downtown Office</option>
@@ -24,10 +24,10 @@ class ProjectForm extends Component {
           </FormGroup>
 
           <FormGroup controlId="scheduleType">
-            <Col smOffset={1} componentClass={ControlLabel} sm={2}>
+            <Col smOffset={2} componentClass={ControlLabel} sm={2}>
               Schedule Type:
             </Col>
-            <Col sm={4}>
+            <Col sm={8}>
               <Radio name="waterMeter" inline>Water Meter</Radio>
               <Radio name="occupancy" inline>Occupancy</Radio>
             </Col>
