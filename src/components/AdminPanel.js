@@ -1,4 +1,4 @@
-import React, { Component } from 'React';
+import React, { Component } from 'react';
 
 import { Table } from 'react-bootstrap';
 
@@ -16,8 +16,13 @@ class AdminPanel extends Component {
               <td>CRUD</td>
             </tr>
           </thead>
+          <tbody>
+            
+          </tbody>
         </Table>
       </div>
     );
   }
 }
+
+export default AdminPanel;
