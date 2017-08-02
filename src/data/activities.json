@@ -1,0 +1,167 @@
+[
+  {
+    "_id": ObjectId("1"),
+    "activity": "WW Line Installation Complete",
+    "duration": 30
+  },
+  {
+    "_id": ObjectId("2"),
+    "activity": "Schedule City Testing & Inspections",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("3"),
+    "activity": "City Testing &  Inspections",
+    "duration": 14
+  },
+  {
+    "_id": ObjectId("4"),
+    "activity": "Engineer's Punchlist Walk",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("5"),
+    "activity": "Schedule Valve Turn",
+    "duration": 14
+  },
+  {
+    "_id": ObjectId("6"),
+    "activity": "Valve Turn",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("7"),
+    "activity": "Water release concurence, engineer's estimate for remaining items, post bond",
+    "duration": 21
+  },
+  {
+    "_id": ObjectId("8"),
+    "activity": "Pavement complete & utilties adjusted to grade. Schedule Engineer's punch list walk.",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("9"),
+    "activity": "Engineer's Punchlist Walk",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("10"),
+    "activity": "Inspector's Punch List Walk",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("11"),
+    "activity": "Punch List Completion Walk",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("12"),
+    "activity": "Punch List Completion",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("13"),
+    "activity": "Final / As-built correction approved by City",
+    "duration": 30
+  },
+  {
+    "_id": ObjectId("14"),
+    "activity": "Engineer to complete intersection drawings",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("15"),
+    "activity": "City to review completed intersection drawings",
+    "duration": 14
+  },
+  {
+    "_id": ObjectId("16"),
+    "activity": "Intersection drawing approval",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("17"),
+    "activity": "Final Acceptance Letter",
+    "duration": 5
+  },
+  {
+    "_id": ObjectId("18"),
+    "activity": "Construction Activites Needed to be Complete Before TCO",
+    "duration": 60
+  },
+  {
+    "_id": ObjectId("19"),
+    "activity": "Engineer's Environmental Concurrence Walk",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("20"),
+    "activity": "Engineer's Environmental Punch List",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("21"),
+    "activity": "Engineer's Environmental Concurrence Letter",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("22"),
+    "activity": "City Environmental Inspection",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("23"),
+    "activity": "City Environmental Punch List",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("24"),
+    "activity": "City Environmental Follow-up Inspection",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("25"),
+    "activity": "Construction Activites Needed to be Complete Before Final CO",
+    "duration": 30
+  },
+  {
+    "_id": ObjectId("26"),
+    "activity": "Owner / GC Request Final Concurrence Walk",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("27"),
+    "activity": "Engineer's Final Concurrence Walk",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("28"),
+    "activity": "Engineer's Final Punch List",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("29"),
+    "activity": "Engineer's Final Concurrence Letter",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("30"),
+    "activity": "As-built Correction",
+    "duration": 14
+  },
+  {
+    "_id": ObjectId("31"),
+    "activity": "City Environmental CO Inspection",
+    "duration": 7
+  },
+  {
+    "_id": ObjectId("32"),
+    "activity": "City Environmental CO Punch List",
+    "duration": 1
+  },
+  {
+    "_id": ObjectId("33"),
+    "activity": "City Environmental Inspection Follow-up",
+    "duration": 7
+  }
+]
