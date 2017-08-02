@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Table } from 'react-bootstrap';
 
+import activityData from '../data/activities.json';
+
 class AdminPanel extends Component {
 
   render() {
@@ -17,7 +19,9 @@ class AdminPanel extends Component {
             </tr>
           </thead>
           <tbody>
-            
+            {
+              console.log("Data: " + activityData)
+            }
           </tbody>
         </Table>
       </div>
