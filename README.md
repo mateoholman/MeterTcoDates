@@ -1,5 +1,5 @@
 # To-do
-1. Finish building the table
+1. Setup the AdminPanel componet.
 
 # Process
 1. Scaffold frontend with create-react-app
