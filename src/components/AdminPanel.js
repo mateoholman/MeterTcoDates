@@ -19,9 +19,6 @@ class AdminPanel extends Component {
             </tr>
           </thead>
           <tbody>
-            {
-              console.log("Data: " + activityData)
-            }
           </tbody>
         </Table>
       </div>
