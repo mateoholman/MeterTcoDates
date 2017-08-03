@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-
 import { Table } from 'react-bootstrap';
 
 import activityData from '../data/activities.json';
 
 class AdminPanel extends Component {
+
+  componentDidMount(){
+    console.log(activityData);
+  }
 
   render() {
     return (
