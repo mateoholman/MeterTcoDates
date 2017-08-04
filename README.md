@@ -4,6 +4,7 @@
 3. Setup action creators
 4. Setup reducers
 5. Tie all the redux stuff together
+6. Refactor components into container & presentational components
 
 # Process
 1. Scaffold frontend with create-react-app
@@ -15,4 +16,5 @@
 7. Scaffold the AdminPanel
 8. Create a data file for the JSON data
 9. Install redux, react-redux, redux-promise & redux-devtools-extension
-10. Setup the redux store, middleware, and devtools extension in the App.
+10. Setup the redux store, middleware, and devtools extension in the main App component.
+11.
