@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
-import activityData from '../data/activities.json';
+import ActivityList from '../containers/ActivityList';
 
 class AdminPanel extends Component {
 
@@ -18,17 +18,7 @@ class AdminPanel extends Component {
             </tr>
           </thead>
           <tbody>
-            {
-              activityData.map((activity) => {
-                return(
-                  <tr key={activity._id}>
-                    <td>{activity.activity}</td>
-                    <td>{activity.duration}</td>
-                    <td>CRUD</td>
-                  </tr>
-                )
-              })
-            }
+            <ActivityList />
           </tbody>
         </Table>
       </div>

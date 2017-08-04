@@ -1,6 +1,4 @@
 # To-do
-1. Map out state for redux
-2. Setup redux store
 3. Setup action creators
 4. Setup reducers
 5. Tie all the redux stuff together
@@ -17,4 +15,5 @@
 8. Create a data file for the JSON data
 9. Install redux, react-redux, redux-promise & redux-devtools-extension
 10. Setup the redux store, middleware, and devtools extension in the main App component.
-11.
+11. Setup the redux store inside of index.js
+12. Map out the state and setup the reducers.
