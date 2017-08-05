@@ -1,28 +1,38 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-
-import { fetchActivities } from '../actions/actions';
+import { Table } from 'react-bootstrap';
 
 class ActivityList extends Component {
 
-  componentDidMount(){
-    this.props.fetchActivities();
+  renderActivities(){
+    return this.props.activities.map((activity) => {
+      return(
+        <tr key={activity._id}>
+          <td>{activity.activity}</td>
+          <td>{activity.duration}</td>
+          <td>CRUD</td>
+        </tr>
+      );
+    })
   }
 
   render() {
-    console.log(this.props.activities);
-    return(
-      this.props.activities.map(activity => {
-        return(
-          <tr key={activity._id}>
-            <td>{activity.activity}</td>
-            <td>{activity.duration}</td>
+    return (
+      <Table responsive>
+        <thead>
+          <tr>
+            <td>Activity</td>
+            <td>Duration</td>
             <td>CRUD</td>
           </tr>
-        )
-      })
-    );
+        </thead>
+        <tbody>
+          {this.renderActivities()}
+        </tbody>
+      </Table>
+    )
   }
+
 }
 
 function mapStateToProps(state) {
@@ -31,4 +41,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { fetchActivities })(ActivityList);
+export default connect(mapStateToProps)(ActivityList);
