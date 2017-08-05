@@ -5,8 +5,8 @@ import activitiesReducer from './reducer_activities';
 
 const rootReducer = combineReducers({
   project: projectReducer,
-  schedule: scheduleReducer
+  schedule: scheduleReducer,
   activities: activitiesReducer
 });
 
-return default rootReducer;
+export default rootReducer;

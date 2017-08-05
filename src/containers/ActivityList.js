@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
-import { Connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-import activityData from '../data/activities.json';
+import { fetchActivities } from '../actions/actions';
 
 class ActivityList extends Component {
 
-  renderActivity(){
-    return this.props.activityData.map((activity) => {
-      return(
-        <tr key={activity._id}>
-          <td>{activity.activity}</td>
-          <td>{activity.duration}</td>
-          <td>CRUD</td>
-        </tr>
-      )
-    })
+  componentDidMount(){
+    this.props.fetchActivities();
   }
 
   render() {
+    console.log(this.props.activities);
     return(
-      {renderActivity()}
+      this.props.activities.map(activity => {
+        return(
+          <tr key={activity._id}>
+            <td>{activity.activity}</td>
+            <td>{activity.duration}</td>
+            <td>CRUD</td>
+          </tr>
+        )
+      })
     );
   }
 }
@@ -30,4 +31,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ActivityList);
+export default connect(mapStateToProps, { fetchActivities })(ActivityList);
