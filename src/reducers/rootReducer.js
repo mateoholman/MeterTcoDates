@@ -1,3 +1,5 @@
+// These reducers maintain the global application state.
+
 import { combineReducers } from 'redux';
 import projectReducer from './reducer_project';
 import scheduleReducer from './reducer_schedule';

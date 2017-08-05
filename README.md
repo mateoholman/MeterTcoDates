@@ -1,4 +1,5 @@
 # To-do
+2. Setup redux properly. Right now the action creators are not used.
 3. Setup action creators
 4. Setup reducers
 5. Tie all the redux stuff together
