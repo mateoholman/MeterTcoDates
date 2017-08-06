@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Radio, Button, Col } from 'react-bootstrap';
+import { Form, FormGroup, ControlLabel, FormControl, Radio, Button, Col, Row } from 'react-bootstrap';
+
+import '../styles/ProjectForm.css';
 
 class ProjectForm extends Component {
   render() {
@@ -8,38 +10,41 @@ class ProjectForm extends Component {
         <h2>Choose The Type of Project</h2>
 
         <Form>
-
-          <FormGroup controlId="projectType">
-            <Col smOffset={2} componentClass={ControlLabel} sm={2}>
-              Project Type:
-            </Col>
-            <Col sm={8}>
-              <FormControl componentClass="select" placeholder="DTRes">
-                <option value="DTRes">Downtown Residential / Hotel</option>
-                <option value="DTOffice">Downtown Office</option>
-                <option value="Multifamily">Multifamily</option>
-                <option value="OfficeWarehouse">Office / Warehouse</option>
-              </FormControl>
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="scheduleType">
-            <Col smOffset={2} componentClass={ControlLabel} sm={2}>
-              Schedule Type:
-            </Col>
-            <Col sm={8}>
-              <Radio name="waterMeter" inline>Water Meter</Radio>
-              <Radio name="occupancy" inline>Occupancy</Radio>
-            </Col>
-          </FormGroup>
-
-          <FormGroup>
-           <Col smOffset={2} sm={2}>
-             <Button bsStyle="primary" type="submit">
-               Submit
-             </Button>
-           </Col>
-         </FormGroup>
+          <Row>
+            <FormGroup controlId="projectType">
+              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+                Project Type:
+              </Col>
+              <Col sm={4}>
+                <FormControl componentClass="select" placeholder="DTRes">
+                  <option value="DTRes">Downtown Residential / Hotel</option>
+                  <option value="DTOffice">Downtown Office</option>
+                  <option value="Multifamily">Multifamily</option>
+                  <option value="OfficeWarehouse">Office / Warehouse</option>
+                </FormControl>
+              </Col>
+            </FormGroup>
+          </Row>
+          <Row>
+            <FormGroup controlId="scheduleType">
+              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+                Schedule Type:
+              </Col>
+              <Col sm={8}>
+                <Radio name="waterMeter" inline>Water Meter</Radio>
+                <Radio name="occupancy" inline>Occupancy</Radio>
+              </Col>
+            </FormGroup>
+          </Row>
+          <Row>
+            <FormGroup>
+             <Col smOffset={2} sm={2}>
+               <Button bsStyle="primary" type="submit">
+                 Submit
+               </Button>
+             </Col>
+           </FormGroup>
+          </Row>
 
         </Form>
 

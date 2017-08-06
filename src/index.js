@@ -10,6 +10,8 @@ import App from './components/App';
 import rootReducer from './reducers/rootReducer';
 import registerServiceWorker from './registerServiceWorker';
 
+import './styles/index.css';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(promise)));
 
