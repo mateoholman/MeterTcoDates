@@ -6,12 +6,14 @@ class Header extends Component {
     return(
       <div className="header">
         <Navbar collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              CO Forecast
+            </Navbar.Brand>
+          </Navbar.Header>
           <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">Downtown - Res / Hotel</NavItem>
-            <NavItem eventKey={2} href="#">Downtown - Office</NavItem>
-            <NavItem eventKey={3} href="#">Multifamily</NavItem>
-            <NavItem eventKey={4} href="#">Office / Warehouse</NavItem>
+          <Nav pullRight>
+            <NavItem eventKey={1} href="#">Admin</NavItem>
           </Nav>
         </Navbar.Collapse>
         </Navbar>
