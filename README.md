@@ -1,9 +1,5 @@
 # To-do
-2. Setup redux properly. Right now the action creators are not used.
-3. Setup action creators
-4. Setup reducers
-5. Tie all the redux stuff together
-6. Refactor components into container & presentational components
+1. Figure out how to use redux-form with Bootstrap, or style without bootstrap
 
 # Process
 1. Scaffold frontend with create-react-app
