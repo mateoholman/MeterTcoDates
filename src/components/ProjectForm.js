@@ -15,7 +15,7 @@ class ProjectForm extends Component {
               <Col smOffset={2} componentClass={ControlLabel} sm={2}>
                 Project Type:
               </Col>
-              <Col sm={4}>
+              <Col sm={3}>
                 <FormControl componentClass="select" placeholder="DTRes">
                   <option value="DTRes">Downtown Residential / Hotel</option>
                   <option value="DTOffice">Downtown Office</option>
@@ -31,14 +31,14 @@ class ProjectForm extends Component {
                 Schedule Type:
               </Col>
               <Col sm={8}>
-                <Radio name="waterMeter" inline>Water Meter</Radio>
-                <Radio name="occupancy" inline>Occupancy</Radio>
+                <Radio name="radioGroup" inline>Water Meter</Radio>
+                <Radio name="radioGroup" inline>Occupancy</Radio>
               </Col>
             </FormGroup>
           </Row>
           <Row>
             <FormGroup>
-             <Col smOffset={2} sm={2}>
+             <Col smOffset={4} sm={2}>
                <Button bsStyle="primary" type="submit">
                  Submit
                </Button>
