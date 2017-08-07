@@ -14,3 +14,5 @@
 10. Setup the redux store, middleware, and devtools extension in the main App component.
 11. Setup the redux store inside of index.js
 12. Map out the state and setup the reducers.
+13. Connect form to redux-form.
+14. 
