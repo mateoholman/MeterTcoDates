@@ -12,6 +12,7 @@ class Header extends Component {
             <Navbar.Brand>
               CO Forecast
             </Navbar.Brand>
+            <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
           <Nav pullRight>
