@@ -1,5 +1,5 @@
 # To-do
-1. Figure out how to use redux-form with Bootstrap, or style without bootstrap
+1. Handle the 'submit' portion of the redux form
 
 # Process
 1. Scaffold frontend with create-react-app
@@ -15,4 +15,4 @@
 11. Setup the redux store inside of index.js
 12. Map out the state and setup the reducers.
 13. Connect form to redux-form.
-14. 
+14.

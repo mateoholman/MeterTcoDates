@@ -6,12 +6,25 @@ import '../styles/ProjectForm.css';
 
 class ProjectForm extends Component {
 
+  componentDidMount(){
+    this.props.initialize({
+      projectType: "DTRes",
+      scheduleType: "waterMeter"
+    })
+  }
+
+  onSubmit(values) {
+    console.log(values)
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
       <div className="project-form">
         <h2>Choose The Type of Project</h2>
 
-        <Form>
+        <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 
           <Row>
             <FormGroup controlId="projectType">
@@ -19,7 +32,10 @@ class ProjectForm extends Component {
                 Project Type:
               </Col>
               <Col sm={4}>
-                <Field name="projectType" component="select">
+                <Field
+                  name="projectType"
+                  component="select"
+                >
                   <option value="DTRes">Downtown Residential / Hotel</option>
                   <option value="DTOffice">Downtown Office</option>
                   <option value="Multifamily">Multifamily</option>
