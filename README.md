@@ -1,5 +1,7 @@
 # To-do
-1. Handle the 'submit' portion of the redux form
+1. Update state with form submission
+2. Navigate to the table page
+3. Display the appropriate table info based on the state.
 
 # Process
 1. Scaffold frontend with create-react-app
