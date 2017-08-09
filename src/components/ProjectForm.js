@@ -9,9 +9,11 @@ class ProjectForm extends Component {
   componentDidMount(){
     this.props.initialize({
       projectType: "DTRes",
-      scheduleType: "waterMeter"
+      scheduleType: "waterMeter",
+      dateNeeded: new Date()
     })
   }
+
 
   onSubmit(values) {
     console.log(values)
@@ -62,9 +64,24 @@ class ProjectForm extends Component {
               </Col>
             </FormGroup>
           </Row>
+
+          <Row>
+            <FormGroup controlId="dateNeeded">
+              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+                Date Needed:
+              </Col>
+              <Col sm={8}>
+                <Field
+                  name="datePicker"
+                  component={}
+                />
+              </Col>
+            </FormGroup>>
+          </Row>
+
           <Row>
             <FormGroup>
-             <Col smOffset={4} sm={2}>
+             <Col smOffset={2} sm={2}>
                <Button bsStyle="primary" type="submit">
                  Submit
                </Button>
