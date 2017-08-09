@@ -1,4 +1,5 @@
 # To-do
+1. Add date-picker to form
 1. Update state with form submission
 2. Navigate to the table page
 3. Display the appropriate table info based on the state.

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Radio, Button, Col, Row } from 'react-bootstrap';
+import { Form, FormGroup, ControlLabel, Button, Col, Row } from 'react-bootstrap';
 import { Field, reduxForm } from 'redux-form';
-import { SingleDatePicker } from 'react-dates';
 
 import '../styles/ProjectForm.css';
-import 'react-dates/lib/css/_datepicker.css';
 
 class ProjectForm extends Component {
 
@@ -64,7 +62,6 @@ class ProjectForm extends Component {
               </Col>
             </FormGroup>
           </Row>
-          
           <Row>
             <FormGroup>
              <Col smOffset={4} sm={2}>
