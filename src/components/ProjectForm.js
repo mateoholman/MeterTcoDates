@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, ControlLabel, Button, Col, Row } from 'react-bootstrap';
+import { bindActionCreators } from 'redux';
 import { Field, reduxForm } from 'redux-form';
 import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import moment from 'moment'
 import momentLocaliser from 'react-widgets/lib/localizers/moment'
+
+import { chooseProjectOptions } from '../actions/actions';
 
 import '../styles/ProjectForm.css';
 import 'react-widgets/dist/css/react-widgets.css'
@@ -21,7 +24,8 @@ class ProjectForm extends Component {
   }
 
   onSubmit(values) {
-    console.log(values)
+    console.log(values);
+    chooseProjectOptions(values);
   }
 
   renderDateTimePicker({ input: { onChange, value }, showTime }){
@@ -29,6 +33,7 @@ class ProjectForm extends Component {
       <DateTimePicker
         onChange={onChange}
         format="DD MMM YYYY"
+        placeholder="DD MMM YYYY"
         time={showTime}
         value={!value ? null : new Date(value)}
       />
@@ -86,14 +91,13 @@ class ProjectForm extends Component {
               <Col smOffset={2} componentClass={ControlLabel} sm={2}>
                 Date Needed:
               </Col>
-              <Col sm={8}>
+              <Col sm={3}>
                 <Field
                   name="datePicker"
                   showTime={false}
-                  component={this.renderDateTimePicker}
-                />
+                  component={this.renderDateTimePicker} />
               </Col>
-            </FormGroup>>
+            </FormGroup>
           </Row>
 
           <Row>
@@ -115,4 +119,6 @@ class ProjectForm extends Component {
 
 export default reduxForm({
   form: 'ProjectForm'
-})(ProjectForm);
+})(
+  ProjectForm
+);

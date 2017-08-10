@@ -1,8 +1,11 @@
 # To-do
-1. Add date-picker to form
+1. Define actions
+2. Setup action creators for each action
 1. Update state with form submission
 2. Navigate to the table page
 3. Display the appropriate table info based on the state.
+99. Setup a new branch and try to swap out the date picker with one that
+doesn't use deprecated React.
 
 # Process
 1. Scaffold frontend with create-react-app
