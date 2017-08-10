@@ -6,11 +6,30 @@ export const SET_ACTIVITIES_FILTER = 'SET_ACTIVITIES_FILTER';
 
 export const SET_PROJECT_OPTIONS = 'SET_PROJECT_OPTIONS';
 
-export function chooseProjectOptions(projectInfo){
+/* Other Constants */
+export const ACTIVITIES_FILTERS = {
+  SHOW_ALL: 'SHOW_ALL',
+  METER: 'METER',
+  OCCUPANCY: 'OCCUPANCY'
+}
+
+/* Action Creators */
+
+export function retrieveActivities(activities){
+  type: 'RETRIEVE_ACTIVITIES',
+  payload: activities
+}
+
+export function setActivitiesFilter(filter){
+  type: 'SET_ACTIVITIES_FILTER',
+  payload: filter
+}
+
+export function setProjectOptions(projectInfo){
   //chooseProjectOptions is an action creator and needs to return an action
   console.log('Project info has been applied: ' + projectInfo.projectType);
   return {
-    type: 'PROJECT_SELECTED',
+    type: 'SET_PROJECT_OPTIONS',
     payload: projectInfo
   };
 }
