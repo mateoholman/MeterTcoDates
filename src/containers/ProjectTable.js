@@ -10,6 +10,13 @@ import { connect } from 'react-redux';
 
 class ProjectTable extends Component {
 
+  calculateCalendarDate(){
+    //We need to calculate the durations for the entire project, regardless if
+    //the request is only for the water meter, because the water meter date is
+    //based on the occupancy date!
+    
+  }
+
   renderTableRows(){
     //If the schedule type is water meter, only render those rows.
     //Else, render all the rows
