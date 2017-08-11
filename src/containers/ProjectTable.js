@@ -10,7 +10,10 @@ import { connect } from 'react-redux';
 class ProjectTable extends Component {
 
   renderTableRows(){
-    console.log("Project type: " + this.props.projectType);
+    //If the schedule type is water meter, only render those rows.
+    //Else, render all the rows
+    console.log("Schedule type: " + this.props.scheduleType);
+
   }
 
   render() {
