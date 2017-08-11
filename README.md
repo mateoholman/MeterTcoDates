@@ -1,10 +1,7 @@
 # To-do
-1. Define actions
-2. Setup action creators for each action
-1. Update state with form submission
-2. Navigate to the table page
-3. Display the appropriate table info based on the state.
-99. Setup a new branch and try to swap out the date picker with one that
+*. Navigate to the table page after form submission
+*. Display the appropriate table info based on the state.
+**. Setup a new branch and try to swap out the date picker with one that
 doesn't use deprecated React.
 
 # Process
@@ -22,4 +19,4 @@ doesn't use deprecated React.
 12. Map out the state and setup the reducers.
 13. Connect form to redux-form.
 14. Defined some initial actions.
-15. 
+15. Map the dispatch to props and update the state when the form is submitted.

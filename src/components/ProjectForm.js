@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, ControlLabel, Button, Col, Row } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import moment from 'moment'
 import momentLocaliser from 'react-widgets/lib/localizers/moment'
 
-import { chooseProjectOptions } from '../actions/actions';
+import { setProjectOptions } from '../actions/actions';
 
 import '../styles/ProjectForm.css';
 import 'react-widgets/dist/css/react-widgets.css'
@@ -16,16 +17,17 @@ momentLocaliser(moment)
 class ProjectForm extends Component {
 
   componentDidMount(){
+    //Set form initial state
     this.props.initialize({
       projectType: "DTRes",
       scheduleType: "waterMeter",
       dateNeeded: new Date()
-    })
+    });
   }
 
   onSubmit(values) {
     console.log(values);
-    chooseProjectOptions(values);
+    this.props.setProjectOptions(values);
   }
 
   renderDateTimePicker({ input: { onChange, value }, showTime }){
@@ -93,7 +95,7 @@ class ProjectForm extends Component {
               </Col>
               <Col sm={3}>
                 <Field
-                  name="datePicker"
+                  name="dateNeeded"
                   showTime={false}
                   component={this.renderDateTimePicker} />
               </Col>
@@ -117,8 +119,12 @@ class ProjectForm extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({setProjectOptions}, dispatch);
+}
+
 export default reduxForm({
   form: 'ProjectForm'
 })(
-  ProjectForm
+  connect(null, mapDispatchToProps)(ProjectForm)
 );

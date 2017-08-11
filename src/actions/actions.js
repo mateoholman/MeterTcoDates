@@ -16,18 +16,22 @@ export const ACTIVITIES_FILTERS = {
 /* Action Creators */
 
 export function retrieveActivities(activities){
-  type: 'RETRIEVE_ACTIVITIES',
-  payload: activities
+  return {
+    type: 'RETRIEVE_ACTIVITIES',
+    payload: activities
+  };
 }
 
 export function setActivitiesFilter(filter){
-  type: 'SET_ACTIVITIES_FILTER',
-  payload: filter
+  return {
+    type: 'SET_ACTIVITIES_FILTER',
+    payload: filter
+  };
 }
 
 export function setProjectOptions(projectInfo){
   //chooseProjectOptions is an action creator and needs to return an action
-  console.log('Project info has been applied: ' + projectInfo.projectType);
+  console.log('setProjectOptions action called');
   return {
     type: 'SET_PROJECT_OPTIONS',
     payload: projectInfo

@@ -1,16 +1,18 @@
-import { setProjectOptions } from '../actions/actions';
+//Reducers are pure functions that take in the previous state of your store and an action you would like to use to transform the store.
 
 const initialState = {
-  projectType: "DTRes",
-  scheduleType: "waterMeter",
-  dateNeeded: new Date()
+  projectType: "",
+  scheduleType: "",
+  dateNeeded: null
 }
 
 export default function(state = initialState, action){
+
   switch(action.type){
-    case SET_PROJECT_OPTIONS:
+    case 'SET_PROJECT_OPTIONS':
+      console.log('Reducer called with type: ' + action.type + " and payload " + action.payload);
       const { projectType, scheduleType, dateNeeded } = action.payload;
-      return {...state, projectType, scheduleType, dateNeeded };
+      return {...state, projectType, scheduleType, dateNeeded};
     default:
       return state;
   }
