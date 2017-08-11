@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+//Display the activity data rows based on the scheduleType
+//Calculate the dates based on the projectType and dateNeeded
 
+import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
 class ProjectTable extends Component {

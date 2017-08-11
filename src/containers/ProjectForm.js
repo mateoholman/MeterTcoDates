@@ -28,6 +28,7 @@ class ProjectForm extends Component {
   onSubmit(values) {
     console.log(values);
     this.props.setProjectOptions(values);
+    this.props.history.push('/ProjectSchedule');
   }
 
   renderDateTimePicker({ input: { onChange, value }, showTime }){

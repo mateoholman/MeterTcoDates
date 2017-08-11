@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
-import ProjectForm from './ProjectForm';
-import ProjectTable from './ProjectTable';
+import ProjectForm from '../containers/ProjectForm';
+import ProjectTable from '../containers/ProjectTable';
 import AdminPanel from './AdminPanel';
 import '../styles/App.css';
 
