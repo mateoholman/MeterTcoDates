@@ -10,7 +10,6 @@ export default function(state = initialState, action){
 
   switch(action.type){
     case 'SET_PROJECT_OPTIONS':
-      console.log('Reducer called with type: ' + action.type + " and payload " + action.payload);
       const { projectType, scheduleType, dateNeeded } = action.payload;
       return {...state, projectType, scheduleType, dateNeeded};
     default:

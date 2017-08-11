@@ -31,7 +31,6 @@ export function setActivitiesFilter(filter){
 
 export function setProjectOptions(projectInfo){
   //chooseProjectOptions is an action creator and needs to return an action
-  console.log('setProjectOptions action called');
   return {
     type: 'SET_PROJECT_OPTIONS',
     payload: projectInfo

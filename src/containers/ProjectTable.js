@@ -1,10 +1,18 @@
+//Connect & mapStateToProps
 //Display the activity data rows based on the scheduleType
 //Calculate the dates based on the projectType and dateNeeded
 
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
+import { connect } from 'react-redux';
+
 
 class ProjectTable extends Component {
+
+  renderTableRows(){
+    console.log("Project type: " + this.props.projectType);
+  }
+
   render() {
     return(
       <div className="project-table">
@@ -16,10 +24,21 @@ class ProjectTable extends Component {
               <th>Date</th>
             </tr>
           </thead>
+          <tbody>
+            {this.renderTableRows()}
+          </tbody>
         </Table>
       </div>
     );
   }
 }
 
-export default ProjectTable;
+function mapStateToProps(state){
+  return {
+    projectType: state.project.projectType,
+    scheduleType: state.project.scheduleType,
+    dateNeeded: state.project.dateNeeded
+  };
+}
+
+export default connect (mapStateToProps)(ProjectTable);
