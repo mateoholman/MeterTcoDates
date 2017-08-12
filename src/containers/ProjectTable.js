@@ -26,12 +26,21 @@ class ProjectTable extends Component {
   calculateMeterStartDate(duration){
     //Date needed - total duration
     const dateNeeded = this.props.dateNeeded;
-    console.log('Date needed is: ' + dateNeeded + ' and duration is: ' + duration);
     const updatedDate = dateNeeded.getDate() - duration;
-    console.log('The updatedDate is: ' + updatedDate);
     dateNeeded.setDate(updatedDate);
-    console.log('Date needed is now: ' + dateNeeded);
     return dateNeeded;
+  }
+
+  meterDateArrayGen(startDate){
+    //Return an array of dates for the activities associated with the meter
+    const newDateArry = [];
+    const currentDate = startDate;
+    newDateArry[0] = startDate;
+    for(i=1;i<10;i++){
+      newDateArry[i] = currentDate.getDate() - this.props.activities[i-1].duration;
+      console.log('Date saved at ' + i + ' is: ' + newDateArry[i]);
+    }
+    return newDateArry;
   }
 
   renderTableRows(){
@@ -67,7 +76,7 @@ class ProjectTable extends Component {
 
     const tcoDuration = this.calculateMeterDuration();
     const firstDate = this.calculateMeterStartDate(tcoDuration);
-    console.log('The first date is: ' + firstDate);
+    const dateArray = this.meterDateArrayGen(firstDate);
 
     return(
       <div className="project-table">
