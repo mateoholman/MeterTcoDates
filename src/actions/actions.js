@@ -3,6 +3,7 @@
 /* Action Types */
 export const RETRIEVE_ACTIVITIES = 'RETRIEVE_ACTIVITIES';
 export const SET_ACTIVITIES_FILTER = 'SET_ACTIVITIES_FILTER';
+export const SET_ACTIVITY_DATE = 'SET_ACTIVITY_DATE';
 
 export const SET_PROJECT_OPTIONS = 'SET_PROJECT_OPTIONS';
 
@@ -14,6 +15,16 @@ export const ACTIVITIES_FILTERS = {
 }
 
 /* Action Creators */
+
+export function setActivityDate(activityId, date){
+  return {
+    type: 'SET_ACTIVITY_DATE',
+    payload: {
+      activity: activityId,
+      date: date
+    }
+  }
+}
 
 export function retrieveActivities(activities){
   return {

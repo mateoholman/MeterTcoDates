@@ -1,4 +1,4 @@
-//Put the dates needed in the rows.
+// Create a set_date action to update the activity dates in the store.
 
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
