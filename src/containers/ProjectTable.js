@@ -1,7 +1,4 @@
-// Calculate the durations to water meter
-//    Start by calculating date + duration
-//Display the activity data rows based on the scheduleType
-//Calculate the dates based on the projectType and dateNeeded
+//Put the dates needed in the rows.
 
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
@@ -33,13 +30,17 @@ class ProjectTable extends Component {
 
   meterDateArrayGen(startDate){
     //Return an array of dates for the activities associated with the meter
-    const newDateArry = [];
-    const currentDate = startDate;
+    let newDateArry = [];
+    let currentDate = startDate;
+    let newDate = startDate;
     newDateArry[0] = startDate;
-    for(i=1;i<10;i++){
-      newDateArry[i] = currentDate.getDate() - this.props.activities[i-1].duration;
+    for (let i=1; i<8; i++) {
+      let duration = this.props.activities[i-1].duration;
+      newDate = currentDate.getDate() + duration;
+      currentDate.setDate(newDate);
+      newDateArry[i] = currentDate;
       console.log('Date saved at ' + i + ' is: ' + newDateArry[i]);
-    }
+    };
     return newDateArry;
   }
 
