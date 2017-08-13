@@ -26,10 +26,9 @@ export function setActivityDate(activityId, date){
   }
 }
 
-export function retrieveActivities(activities){
+export function retrieveActivities(){
   return {
-    type: 'RETRIEVE_ACTIVITIES',
-    payload: activities
+    type: 'RETRIEVE_ACTIVITIES'
   };
 }
 

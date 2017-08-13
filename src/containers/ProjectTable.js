@@ -11,7 +11,7 @@ class ProjectTable extends Component {
   //has an added date key/value pair
 
   calculateMeterDuration(){
-    const tcoDuration = this.props.activities.reduce(function(sum, activity) {
+    const tcoDuration = this.props.activities.activities.reduce(function(sum, activity) {
       while(activity._id < 9){
         return sum + activity.duration;
       }
@@ -35,7 +35,7 @@ class ProjectTable extends Component {
     let newDate = startDate;
     newDateArry[0] = startDate;
     for (let i=1; i<8; i++) {
-      let duration = this.props.activities[i-1].duration;
+      let duration = this.props.activities.activities[i-1].duration;
       newDate = currentDate.getDate() + duration;
       currentDate.setDate(newDate);
       newDateArry[i] = currentDate;
@@ -49,7 +49,7 @@ class ProjectTable extends Component {
     //Else, render all the rows
     console.log("The meter duration is: " + this.calculateMeterDuration());
     if(this.props.scheduleType === 'waterMeter'){
-      return this.props.activities.map((activity) => {
+      return this.props.activities.activities.map((activity) => {
         while(activity._id < 9) {
           return(
             <tr key={activity._id}>
@@ -62,7 +62,7 @@ class ProjectTable extends Component {
     }
 
     else {
-      return this.props.activities.map((activity) => {
+      return this.props.activities.activities.map((activity) => {
         return(
           <tr key={activity._id}>
             <td>{activity.activity}</td>
