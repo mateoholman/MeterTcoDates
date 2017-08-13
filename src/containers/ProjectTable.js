@@ -3,7 +3,9 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { setActivityDate } from '../actions/actions';
 
 class ProjectTable extends Component {
 
@@ -79,6 +81,7 @@ class ProjectTable extends Component {
     const firstDate = this.calculateMeterStartDate(tcoDuration);
     const dateArray = this.meterDateArrayGen(firstDate);
 
+
     return(
       <div className="project-table">
         <h2>Project Table</h2>
@@ -107,4 +110,8 @@ function mapStateToProps(state){
   };
 }
 
-export default connect (mapStateToProps)(ProjectTable);
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({setActivityDate}, dispatch);
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(ProjectTable);

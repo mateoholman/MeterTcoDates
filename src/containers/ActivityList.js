@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Table } from 'react-bootstrap';
 
-import { retrieveActivities } from '../actions/actions';
-
 class ActivityList extends Component {
 
   renderActivities(){
