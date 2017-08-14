@@ -46,7 +46,7 @@ class ProjectTable extends Component {
     return newDateArry;
   }
 
-  renderTableRows(){
+  renderTableRows(datesAry){
     //If the schedule type is water meter, only render those rows.
     //Else, render all the rows
     console.log("The meter duration is: " + this.calculateMeterDuration());
@@ -56,7 +56,7 @@ class ProjectTable extends Component {
           return(
             <tr key={activity._id}>
               <td>{activity.activity}</td>
-              <td>{activity.duration}</td>
+              <td>{datesAry[activity._id - 1]}</td>
             </tr>
           );
         }
@@ -80,7 +80,7 @@ class ProjectTable extends Component {
     const tcoDuration = this.calculateMeterDuration();
     const firstDate = this.calculateMeterStartDate(tcoDuration);
     const dateArray = this.meterDateArrayGen(firstDate);
-
+    console.log("The dateArray is: " + dateArray)
 
     return(
       <div className="project-table">
@@ -93,7 +93,7 @@ class ProjectTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.renderTableRows()}
+            {this.renderTableRows(dateArray)}
           </tbody>
         </Table>
       </div>
