@@ -1,5 +1,5 @@
 # To-do
-*. Navigate to the table page after form submission
+*. Need to update the meter dates during/after form submission for the render to take place properly.
 *. Display the appropriate table info based on the state.
 **. Setup a new branch and try to swap out the date picker with one that
 doesn't use deprecated React.

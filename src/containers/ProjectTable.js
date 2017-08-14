@@ -9,8 +9,17 @@ import { setActivityDate } from '../actions/actions';
 
 class ProjectTable extends Component {
 
-  //Maybe we can take the array of activities, create a new local object that
-  //has an added date key/value pair
+  componentDidMount(){
+    //We'll try putting the date functions in here to prevent a reloading loop
+    const tcoDuration = this.calculateMeterDuration();
+    const firstDate = this.calculateMeterStartDate(tcoDuration);
+    //Now we'll try calling the setActivityDate() to prevent the loop
+    for (let i=0; i<9; i++){
+      this.props.setActivityDate(this.props.activities.activities[i]._id, firstDate);
+      console.log("Activity: " + this.props.activities.activities[i].activity + " has a date of: " + this.props.activities.activities[i].date);
+    }
+    this.renderTableRows();
+  }
 
   calculateMeterDuration(){
     const tcoDuration = this.props.activities.activities.reduce(function(sum, activity) {
@@ -46,17 +55,28 @@ class ProjectTable extends Component {
     return newDateArry;
   }
 
-  renderTableRows(datesAry){
+  renderTableRows(){
     //If the schedule type is water meter, only render those rows.
     //Else, render all the rows
     console.log("The meter duration is: " + this.calculateMeterDuration());
+    console.log("The first activity date is now: " + this.props.activities.activities[0].date);
     if(this.props.scheduleType === 'waterMeter'){
+
+      // for (let i=0; i<9; i++){
+      //       return(
+      //         <tr key={this.props.activities.activities[i]._id}>
+      //           <td>{this.props.activities.activities[i].activity}</td>
+      //           <td>{this.props.activities.activities[i].date ? this.props.activities.activities[i].date.toLocaleDateString() : "Loading"}</td>
+      //         </tr>
+      //       );
+      // }
+
       return this.props.activities.activities.map((activity) => {
         while(activity._id < 9) {
           return(
             <tr key={activity._id}>
               <td>{activity.activity}</td>
-              <td>{datesAry[activity._id - 1]}</td>
+              <td>{activity.date ? activity.date.toLocaleDateString() : "Loading"}</td>
             </tr>
           );
         }
@@ -77,10 +97,7 @@ class ProjectTable extends Component {
 
   render() {
 
-    const tcoDuration = this.calculateMeterDuration();
-    const firstDate = this.calculateMeterStartDate(tcoDuration);
-    const dateArray = this.meterDateArrayGen(firstDate);
-    console.log("The dateArray is: " + dateArray)
+    const dateArray = [];
 
     return(
       <div className="project-table">
@@ -93,7 +110,7 @@ class ProjectTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.renderTableRows(dateArray)}
+            {this.renderTableRows()}
           </tbody>
         </Table>
       </div>
