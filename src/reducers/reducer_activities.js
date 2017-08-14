@@ -17,10 +17,11 @@ export default function(state = initialState, action) {
       //Find the activity with the id passed and change the date field
       const activityId = action.payload.activity - 1;
       const newDate = action.payload.date;
-      const newActivities = state.activities;
-      newActivities[activityId].date = newDate;
-      console.log(newActivities[activityId].activity + " new date is " + newActivities[activityId].date);
-      return {...state, newActivities};
+      const activities = state.activities;
+      const newFilter = state.filter;
+      activities[activityId].date = newDate;
+      console.log(activities[activityId].activity + " new date is " + activities[activityId].date);
+      return {activities, newFilter};
 
     case 'SET_ACTIVITIES_FILTER':
       break;

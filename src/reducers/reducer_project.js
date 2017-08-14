@@ -11,7 +11,7 @@ export default function(state = initialState, action){
   switch(action.type){
     case 'SET_PROJECT_OPTIONS':
       const { projectType, scheduleType, dateNeeded } = action.payload;
-      return {...state, projectType, scheduleType, dateNeeded};
+      return { projectType, scheduleType, dateNeeded };
     default:
       return state;
   }
