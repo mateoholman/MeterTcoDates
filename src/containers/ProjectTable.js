@@ -12,7 +12,7 @@ class ProjectTable extends Component {
   componentDidMount(){
     //We'll try putting the date functions in here to prevent a reloading loop
     const tcoDuration = this.calculateMeterDuration();
-    const firstDate = this.calculateMeterStartDate(tcoDuration);
+    const firstDate = this.calculateMeterStartDate(this.props.dateNeeded, tcoDuration);
     this.setTcoDates(this.props.dateNeeded);
   }
 
@@ -20,8 +20,9 @@ class ProjectTable extends Component {
     //Set the first date to the start date
     this.props.setActivityDate(this.props.activities.activities[0]._id, startDate);
     let lastDate = startDate;
-    //Calulate the rest of the dates involved in obtaining the meter
-    for (let i=1; i<8; i++){
+    //Calulate the rest of the dates involved in obtaining the meter, except
+    //for the actual meter date!
+    for (let i=1; i<7; i++){
       let newDate = lastDate.getDate() +  this.props.activities.activities[(i-1)].duration;
       let updatedDate = new Date(lastDate);
       updatedDate.setDate(newDate);
@@ -51,8 +52,13 @@ class ProjectTable extends Component {
     const dateNeeded = tcoDate.getDate() - meterDuration;
     const newDate = new Date(tcoDate);
     newDate.setDate(dateNeeded);
+    // Set the meter release date based on the calculation
+    this.props.setActivityDate(this.props.activities.activities[7]._id, newDate);
     // Use the setMeterDates() with the new meter date
-
+    const shorDur = this.calculateMeterDuration();
+    console.log("Shor Dura is: " + shorDur);
+    const newStartDate = this.calculateMeterStartDate(newDate, shorDur);
+    this.setMeterDates(newStartDate);
     // Calculate the sum of durations of all activities after the meter Date
     // Set the date of the first activity after meter release
     // Set the remainder of the dates
@@ -69,11 +75,9 @@ class ProjectTable extends Component {
     return tcoDuration;
   }
 
-  calculateMeterStartDate(duration){
-    //Date needed - total duration
-    const dateNeeded = this.props.dateNeeded;
-    const updatedDate = dateNeeded.getDate() - duration;
-    const newDate = new Date(dateNeeded);
+  calculateMeterStartDate(meterDate, duration){
+    const updatedDate = meterDate.getDate() - duration;
+    const newDate = new Date(meterDate);
     newDate.setDate(updatedDate);
     console.log("Updated date is: " + newDate);
     return newDate;
@@ -86,7 +90,6 @@ class ProjectTable extends Component {
 
       return this.props.activities.activities.map((activity) => {
         while(activity._id < 9) {
-          console.log("Activity rendered is: " + activity.activity + " and the date is: " + activity.date);
           return(
             <tr key={activity._id}>
               <td>{activity.activity}</td>
@@ -102,7 +105,7 @@ class ProjectTable extends Component {
         return(
           <tr key={activity._id}>
             <td>{activity.activity}</td>
-            <td>{activity.duration}</td>
+            <td>{activity.date ? activity.date.toLocaleDateString() : "Loading"}</td>
           </tr>
         );
       })
