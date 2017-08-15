@@ -60,9 +60,21 @@ class ProjectTable extends Component {
     const newStartDate = this.calculateMeterStartDate(newDate, shorDur);
     this.setMeterDates(newStartDate);
     // Calculate the sum of durations of all activities after the meter Date
+    const durationAfterMeter = this.calculateDurationAfterMeter(shorDur);
+    console.log("Duration after meter is: " + durationAfterMeter);
     // Set the date of the first activity after meter release
     // Set the remainder of the dates
 
+  }
+
+  calculateDurationAfterMeter(preDuration){
+    const entireDuration = this.props.activities.activities.reduce(function(sum, activity) {
+        return sum + activity.duration;
+    },0);
+    console.log("Entire duration is: " + entireDuration);
+    console.log("Short duration is: " + preDuration);
+    const afterDuration = entireDuration - preDuration;
+    return afterDuration;
   }
 
   calculateMeterDuration(){
