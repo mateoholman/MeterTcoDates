@@ -25,7 +25,6 @@ class ProjectTable extends Component {
       let newDate = lastDate.getDate() +  this.props.activities.activities[(i-1)].duration;
       let updatedDate = new Date(lastDate);
       updatedDate.setDate(newDate);
-      console.log("updatedDate is now: " + updatedDate);
       this.props.setActivityDate(this.props.activities.activities[i]._id, updatedDate);
       lastDate = updatedDate;
     };
@@ -53,6 +52,7 @@ class ProjectTable extends Component {
     const newDate = new Date(tcoDate);
     newDate.setDate(dateNeeded);
     // Use the setMeterDates() with the new meter date
+
     // Calculate the sum of durations of all activities after the meter Date
     // Set the date of the first activity after meter release
     // Set the remainder of the dates
