@@ -13,12 +13,11 @@ class ProjectTable extends Component {
     //We'll try putting the date functions in here to prevent a reloading loop
     const tcoDuration = this.calculateMeterDuration();
     const firstDate = this.calculateMeterStartDate(tcoDuration);
-    this.setMeterDates(firstDate);
+    this.setTcoDates(this.props.dateNeeded);
   }
 
   setMeterDates(startDate){
     //Set the first date to the start date
-    console.log("Start date is first: " + startDate);
     this.props.setActivityDate(this.props.activities.activities[0]._id, startDate);
     let lastDate = startDate;
     //Calulate the rest of the dates involved in obtaining the meter
@@ -30,11 +29,34 @@ class ProjectTable extends Component {
       this.props.setActivityDate(this.props.activities.activities[i]._id, updatedDate);
       lastDate = updatedDate;
     };
+  }
 
-    // let updatedDate = newDate.getDate() + this.props.activities.activities[1].duration;
-    // let anotherDate = new Date(newDate);
-    // anotherDate.setDate(updatedDate);
-    // this.props.setActivityDate(this.props.activities.activities[1]._id, anotherDate);
+  getTcoMeterDuration(){
+    switch (this.props.projectType){
+      case 'DTRes':
+        return 403;
+      case 'DTOffice':
+        return 222;
+      case 'Multifamily':
+        return 403;
+      case 'OfficeWarehouse':
+        return 192;
+      default:
+        return 0;
+    }
+  }
+
+  setTcoDates(tcoDate){
+    // Calculate the meter release date based on the project type
+    const meterDuration = this.getTcoMeterDuration();
+    const dateNeeded = tcoDate.getDate() - meterDuration;
+    const newDate = new Date(tcoDate);
+    newDate.setDate(dateNeeded);
+    // Use the setMeterDates() with the new meter date
+    // Calculate the sum of durations of all activities after the meter Date
+    // Set the date of the first activity after meter release
+    // Set the remainder of the dates
+
   }
 
   calculateMeterDuration(){
