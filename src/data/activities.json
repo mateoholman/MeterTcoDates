@@ -109,102 +109,120 @@
   },
   {
     "_id": "19",
+    "activity": "Public Closeout",
+    "duration": 0,
+    "date": null
+  },
+  {
+    "_id": "20",
     "activity": "Construction Activites Needed to be Complete Before TCO",
     "duration": 60,
     "date": null
   },
   {
-    "_id": "20",
-    "activity": "Engineer's Environmental Concurrence Walk",
-    "duration": 7,
-    "date": null
-  },
-  {
     "_id": "21",
-    "activity": "Engineer's Environmental Punch List",
-    "duration": 7,
+    "activity": "Fiscal Posted for Incomplete Items",
+    "duration": 0,
     "date": null
   },
   {
     "_id": "22",
-    "activity": "Engineer's Environmental Concurrence Letter",
+    "activity": "Owner / Contractor requests concurrence walk",
     "duration": 1,
     "date": null
   },
   {
     "_id": "23",
-    "activity": "City Environmental Inspection",
+    "activity": "Engineer's Environmental Concurrence Walk",
     "duration": 7,
     "date": null
   },
   {
     "_id": "24",
+    "activity": "Engineer's Environmental Punch List",
+    "duration": 7,
+    "date": null
+  },
+  {
+    "_id": "25",
+    "activity": "Engineer's Environmental Concurrence Letter",
+    "duration": 1,
+    "date": null
+  },
+  {
+    "_id": "26",
+    "activity": "City Environmental Inspection",
+    "duration": 7,
+    "date": null
+  },
+  {
+    "_id": "27",
     "activity": "City Environmental Punch List",
     "duration": 1,
     "date": null
   },
   {
-    "_id": "25",
+    "_id": "28",
     "activity": "City Environmental Follow-up Inspection",
     "duration": 7,
     "date": null
   },
   {
-    "_id": "26",
+    "_id": "29",
     "activity": "Construction Activites Needed to be Complete Before Final CO",
     "duration": 30,
     "date": null
   },
   {
-    "_id": "27",
+    "_id": "30",
     "activity": "Owner / GC Request Final Concurrence Walk",
     "duration": 1,
     "date": null
   },
   {
-    "_id": "28",
+    "_id": "31",
     "activity": "Engineer's Final Concurrence Walk",
     "duration": 7,
     "date": null
   },
   {
-    "_id": "29",
+    "_id": "32",
     "activity": "Engineer's Final Punch List",
     "duration": 5,
     "date": null
   },
   {
-    "_id": "30",
+    "_id": "33",
     "activity": "Engineer's Final Concurrence Letter",
     "duration": 1,
     "date": null
   },
   {
-    "_id": "31",
+    "_id": "34",
     "activity": "As-built Correction",
     "duration": 14,
     "date": null
   },
   {
-    "_id": "32",
+    "_id": "35",
     "activity": "City Environmental CO Inspection",
     "duration": 7,
     "date": null
   },
   {
-    "_id": "33",
+    "_id": "36",
     "activity": "City Environmental CO Punch List",
     "duration": 1,
     "date": null
   },
   {
-    "_id": "34",
+    "_id": "37",
     "activity": "City Environmental Inspection Follow-up",
     "duration": 7,
     "date": null
   },
   {
-    "_id": "35",
+    "_id": "38",
     "activity": "Temporary Certificate of Occupancy (TCO)",
     "duration": 0,
     "date": null

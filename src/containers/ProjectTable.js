@@ -61,20 +61,34 @@ class ProjectTable extends Component {
       this.setMeterDates(newStartDate);
 
     // Calculate the sum of durations of all activities after activity 18
-    const durationAfter18 = this.calculateDurationAfter18();
-    // Set the date of the first activity after meter release
+      const durationAfter19 = this.calculateDurationAfter19();
+    // Set the date of the first activity after public closeout to the end
+      this.setOccupancyDates(durationAfter19);
       //Activity 9 "Pavement complete & utilties adjusted to grade. Schedule Engineer's punch list walk. " is tied to Activity 19 "Must be completed for TCO (stocking)"
       //Activity 19 is a reversed tie to the TCO date.
     // Set the remainder of the dates
 
   }
 
-  calculateDurationAfter18(){
+  setOccupancyDates(overallDuration){
+    //Calculate the date of Activity 18 first
+    let currentDate = this.calculateMeterStartDate(this.props.dateNeeded, overallDuration);
+    console.log("The date for Activity 19 is: " + currentDate);
+    for (let i=19; i<this.props.activities.activities.length;i++){
+      this.props.setActivityDate(this.props.activities.activities[i]._id, currentDate);
+      let newDate = currentDate.getDate() +  this.props.activities.activities[i].duration;
+      let updatedDate = new Date(currentDate);
+      updatedDate.setDate(newDate);
+      currentDate = updatedDate;
+    }
+  }
+
+  calculateDurationAfter19(){
     let afterDuration = 0;
-    for (let i=18; i<this.props.activities.activities.length;i++){
+    for (let i=19; i<this.props.activities.activities.length - 1;i++){
       afterDuration += this.props.activities.activities[i].duration;
     }
-    console.log("After duration is: " + afterDuration);
+    console.log("After 18 duration is: " + afterDuration);
     return afterDuration;
   }
 
@@ -92,7 +106,6 @@ class ProjectTable extends Component {
     const updatedDate = meterDate.getDate() - duration;
     const newDate = new Date(meterDate);
     newDate.setDate(updatedDate);
-    console.log("Updated date is: " + newDate);
     return newDate;
   }
 
