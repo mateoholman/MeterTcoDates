@@ -48,32 +48,33 @@ class ProjectTable extends Component {
 
   setTcoDates(tcoDate){
     // Calculate the meter release date based on the project type
-    const meterDuration = this.getTcoMeterDuration();
-    const dateNeeded = tcoDate.getDate() - meterDuration;
-    const newDate = new Date(tcoDate);
-    newDate.setDate(dateNeeded);
+      const meterDuration = this.getTcoMeterDuration();
+      const dateNeeded = tcoDate.getDate() - meterDuration;
+      const newDate = new Date(tcoDate);
+      newDate.setDate(dateNeeded);
     // Set the meter release date based on the calculation
-    this.props.setActivityDate(this.props.activities.activities[7]._id, newDate);
+      this.props.setActivityDate(this.props.activities.activities[7]._id, newDate);
     // Use the setMeterDates() with the new meter date
-    const shorDur = this.calculateMeterDuration();
-    console.log("Shor Dura is: " + shorDur);
-    const newStartDate = this.calculateMeterStartDate(newDate, shorDur);
-    this.setMeterDates(newStartDate);
-    // Calculate the sum of durations of all activities after the meter Date
-    const durationAfterMeter = this.calculateDurationAfterMeter(shorDur);
-    console.log("Duration after meter is: " + durationAfterMeter);
+      const shorDur = this.calculateMeterDuration();
+      console.log("Shor Dura is: " + shorDur);
+      const newStartDate = this.calculateMeterStartDate(newDate, shorDur);
+      this.setMeterDates(newStartDate);
+
+    // Calculate the sum of durations of all activities after activity 18
+    const durationAfter18 = this.calculateDurationAfter18();
     // Set the date of the first activity after meter release
+      //Activity 9 "Pavement complete & utilties adjusted to grade. Schedule Engineer's punch list walk. " is tied to Activity 19 "Must be completed for TCO (stocking)"
+      //Activity 19 is a reversed tie to the TCO date.
     // Set the remainder of the dates
 
   }
 
-  calculateDurationAfterMeter(preDuration){
-    const entireDuration = this.props.activities.activities.reduce(function(sum, activity) {
-        return sum + activity.duration;
-    },0);
-    console.log("Entire duration is: " + entireDuration);
-    console.log("Short duration is: " + preDuration);
-    const afterDuration = entireDuration - preDuration;
+  calculateDurationAfter18(){
+    let afterDuration = 0;
+    for (let i=18; i<this.props.activities.activities.length;i++){
+      afterDuration += this.props.activities.activities[i].duration;
+    }
+    console.log("After duration is: " + afterDuration);
     return afterDuration;
   }
 
