@@ -10,13 +10,13 @@ class Header extends Component {
         <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              CO Forecast
+              <a href="/">Forecastr</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">Admin</NavItem>
+            <NavItem eventKey={1} href="/">Admin</NavItem>
           </Nav>
         </Navbar.Collapse>
         </Navbar>
