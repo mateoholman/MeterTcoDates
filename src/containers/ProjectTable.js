@@ -56,7 +56,6 @@ class ProjectTable extends Component {
       this.props.setActivityDate(this.props.activities.activities[7]._id, newDate);
     // Use the setMeterDates() with the new meter date
       const shorDur = this.calculateMeterDuration();
-      console.log("Shor Dura is: " + shorDur);
       const newStartDate = this.calculateMeterStartDate(newDate, shorDur);
       this.setMeterDates(newStartDate);
 
@@ -73,10 +72,18 @@ class ProjectTable extends Component {
   setOccupancyDates(overallDuration){
     //Calculate the date of Activity 18 first
     let currentDate = this.calculateMeterStartDate(this.props.dateNeeded, overallDuration);
-    console.log("The date for Activity 19 is: " + currentDate);
     for (let i=19; i<this.props.activities.activities.length;i++){
       this.props.setActivityDate(this.props.activities.activities[i]._id, currentDate);
       let newDate = currentDate.getDate() +  this.props.activities.activities[i].duration;
+      let updatedDate = new Date(currentDate);
+      updatedDate.setDate(newDate);
+      currentDate = updatedDate;
+    }
+
+    currentDate = this.calculateMeterStartDate(this.props.activities.activities[19].date, (this.props.activities.activities[8].duration * -1));
+    for (let i=8; i<19; i++){
+      this.props.setActivityDate(this.props.activities.activities[i]._id, currentDate);
+      let newDate = currentDate.getDate() +  this.props.activities.activities[i+1].duration;
       let updatedDate = new Date(currentDate);
       updatedDate.setDate(newDate);
       currentDate = updatedDate;
@@ -88,7 +95,6 @@ class ProjectTable extends Component {
     for (let i=19; i<this.props.activities.activities.length - 1;i++){
       afterDuration += this.props.activities.activities[i].duration;
     }
-    console.log("After 18 duration is: " + afterDuration);
     return afterDuration;
   }
 

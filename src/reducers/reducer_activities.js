@@ -20,7 +20,6 @@ export default function(state = initialState, action) {
       const activities = state.activities;
       const newFilter = state.filter;
       activities[activityId].date = newDate;
-      console.log(activities[activityId].activity + " new date is " + activities[activityId].date);
       return {activities, newFilter};
 
     case 'SET_ACTIVITIES_FILTER':
