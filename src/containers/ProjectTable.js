@@ -13,7 +13,12 @@ class ProjectTable extends Component {
     //We'll try putting the date functions in here to prevent a reloading loop
     const tcoDuration = this.calculateMeterDuration();
     const firstDate = this.calculateMeterStartDate(this.props.dateNeeded, tcoDuration);
-    this.setTcoDates(this.props.dateNeeded);
+    if(this.props.scheduleType === 'waterMeter'){
+      this.setMeterDates(firstDate);
+    }
+    else{
+      this.setTcoDates(this.props.dateNeeded);
+    }
   }
 
   setMeterDates(startDate){
@@ -22,7 +27,7 @@ class ProjectTable extends Component {
     let lastDate = startDate;
     //Calulate the rest of the dates involved in obtaining the meter, except
     //for the actual meter date!
-    for (let i=1; i<7; i++){
+    for (let i=1; i<8; i++){
       let newDate = lastDate.getDate() +  this.props.activities.activities[(i-1)].duration;
       let updatedDate = new Date(lastDate);
       updatedDate.setDate(newDate);
