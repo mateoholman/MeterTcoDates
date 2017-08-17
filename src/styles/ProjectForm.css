@@ -7,6 +7,22 @@ label {
   padding-right: 2em;
 }
 
+select {
+  -webkit-appearance-moz-appearance: menulist-button;
+  height: 4em;
+}
+
+option {
+  font-size: 1.25em;
+}
+
+input[type="radio"]{
+  height: 2em;
+  width: 2em;
+  margin-right: .5em;
+  vertical-align: middle;
+}
+
 .form-group {
   margin: 1em;
 }

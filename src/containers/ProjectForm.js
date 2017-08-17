@@ -48,20 +48,15 @@ class ProjectForm extends Component {
 
     return (
       <div className="project-form">
-        <h2>Choose The Type of Project</h2>
-
         <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 
           <Row>
             <FormGroup controlId="projectType">
-              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+              <Col xsOffset={1} smOffset={2} componentClass={ControlLabel} xs={3} sm={2}>
                 Project Type:
               </Col>
-              <Col sm={4}>
-                <Field
-                  name="projectType"
-                  component="select"
-                >
+              <Col xs={8} sm={4}>
+                <Field name="projectType" component="select">
                   <option value="DTRes">Downtown Residential / Hotel</option>
                   <option value="DTOffice">Downtown Office</option>
                   <option value="Multifamily">Multifamily</option>
@@ -73,10 +68,10 @@ class ProjectForm extends Component {
 
           <Row>
             <FormGroup controlId="scheduleType">
-              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+              <Col xsOffset={1} smOffset={2} componentClass={ControlLabel} xs={3} sm={2}>
                 Schedule Type:
               </Col>
-              <Col sm={8}>
+              <Col xs={8} sm={8}>
                 <label>
                   <Field name="scheduleType" component="input" type="radio" value="waterMeter" />
                   Water Meter
@@ -91,10 +86,10 @@ class ProjectForm extends Component {
 
           <Row>
             <FormGroup controlId="dateNeeded">
-              <Col smOffset={2} componentClass={ControlLabel} sm={2}>
+              <Col xsOffset={1} smOffset={2} componentClass={ControlLabel} xs={3} sm={2}>
                 Date Needed:
               </Col>
-              <Col sm={3}>
+              <Col xs={6} sm={3}>
                 <Field
                   name="dateNeeded"
                   showTime={false}
@@ -105,8 +100,8 @@ class ProjectForm extends Component {
 
           <Row>
             <FormGroup>
-             <Col smOffset={2} sm={2}>
-               <Button bsStyle="primary" type="submit">
+             <Col xsOffset={1} smOffset={2} sm={2}>
+               <Button bsStyle="primary" bsSize="large" type="submit">
                  Submit
                </Button>
              </Col>
