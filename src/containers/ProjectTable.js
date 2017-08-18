@@ -70,10 +70,9 @@ class ProjectTable extends Component {
   printScheduleType(){
     switch (this.props.scheduleType) {
       case 'waterMeter':
-        return "a water meter"
-        break;
+        return "Water Meter"
       default:
-        return "a certificate of occupancy"
+        return "Certificate of Occupancy"
     }
   }
 
@@ -179,7 +178,7 @@ class ProjectTable extends Component {
 
     return(
       <div className="project-table">
-        <h2>Timeline to obtain {this.printScheduleType()} for a {this.printProjectType()} project</h2>
+        <h2>{this.printScheduleType()} for a {this.printProjectType()} Project</h2>
         <div className="table-wrapper">
           <Table bordered striped>
             <thead>
