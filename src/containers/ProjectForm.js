@@ -26,7 +26,6 @@ class ProjectForm extends Component {
   }
 
   onSubmit(values) {
-    console.log("Date needed being sent as: " + values.dateNeeded);
     this.props.setProjectOptions(values);
     this.props.history.push('/ProjectSchedule');
   }
