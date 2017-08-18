@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { setActivityDate } from '../actions/actions';
+import '../styles/ProjectTable.css';
 
 class ProjectTable extends Component {
 
@@ -154,7 +155,7 @@ class ProjectTable extends Component {
         while(activity._id < 9) {
           return(
             <tr key={activity._id}>
-              <td>{activity.activity}</td>
+              <td className="activity-col">{activity.activity}</td>
               <td>{activity.date ? activity.date.toLocaleDateString() : "Loading"}</td>
             </tr>
           );
@@ -179,17 +180,19 @@ class ProjectTable extends Component {
     return(
       <div className="project-table">
         <h2>Timeline to obtain {this.printScheduleType()} for a {this.printProjectType()} project</h2>
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Activity</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.renderTableRows()}
-          </tbody>
-        </Table>
+        <div className="table-wrapper">
+          <Table bordered striped>
+            <thead>
+              <tr>
+                <th className="activity-col">Activity</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.renderTableRows()}
+            </tbody>
+          </Table>
+        </div>
       </div>
     );
   }
