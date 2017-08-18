@@ -51,6 +51,31 @@ class ProjectTable extends Component {
     }
   }
 
+  printProjectType(){
+    switch (this.props.projectType){
+      case 'DTRes':
+        return "Downtown Residential";
+      case 'DTOffice':
+        return "Downtown Office";
+      case 'Multifamily':
+        return "Multifamily";
+      case 'OfficeWarehouse':
+        return "Office / Warehouse";
+      default:
+        return "I ain't got time for this";
+    }
+  }
+
+  printScheduleType(){
+    switch (this.props.scheduleType) {
+      case 'waterMeter':
+        return "a water meter"
+        break;
+      default:
+        return "a certificate of occupancy"
+    }
+  }
+
   setTcoDates(tcoDate){
     // Calculate the meter release date based on the project type
       const meterDuration = this.getTcoMeterDuration();
@@ -153,7 +178,7 @@ class ProjectTable extends Component {
 
     return(
       <div className="project-table">
-        <h2>Project Table</h2>
+        <h2>Timeline to obtain {this.printScheduleType()} for a {this.printProjectType()} project</h2>
         <Table responsive>
           <thead>
             <tr>
