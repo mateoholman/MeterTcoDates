@@ -10,3 +10,8 @@ h2 {
 .activity-col {
   width: 85%;
 }
+
+.milestone-activity {
+  font-weight: bold;
+  background-color: lightgray;
+}

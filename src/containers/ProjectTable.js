@@ -146,6 +146,7 @@ class ProjectTable extends Component {
   }
 
   renderTableRows(){
+    //Set a variable for conditional styling of the milestone activities
     //If the schedule type is water meter, only render those rows.
     //Else, render all the rows
     if(this.props.scheduleType === 'waterMeter'){
@@ -153,7 +154,7 @@ class ProjectTable extends Component {
       return this.props.activities.activities.map((activity) => {
         while(activity._id < 9) {
           return(
-            <tr key={activity._id}>
+            <tr key={activity._id} className={activity.duration ? null : "milestone-activity"}>
               <td className="activity-col">{activity.activity}</td>
               <td>{activity.date ? activity.date.toLocaleDateString() : "Loading"}</td>
             </tr>
@@ -165,7 +166,7 @@ class ProjectTable extends Component {
     else {
       return this.props.activities.activities.map((activity) => {
         return(
-          <tr key={activity._id}>
+          <tr key={activity._id} className={activity.duration ? null : "milestone-activity"}>
             <td>{activity.activity}</td>
             <td>{activity.date ? activity.date.toLocaleDateString() : "Loading"}</td>
           </tr>
