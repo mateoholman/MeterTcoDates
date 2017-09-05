@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 
+// Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
   //Serve production assets when in production!
   app.use(express.static('client/build'));
