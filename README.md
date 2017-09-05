@@ -1,5 +1,4 @@
 # To-do
-*. Bold / Highlight the important rows
 *. Start refactoring code
 **. Setup a new branch and try to swap out the date picker with one that
 doesn't use deprecated React.
